@@ -1,0 +1,19 @@
+#app { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; }
+
+#app .app { display: -ms-inline-flexbox; display: inline-flex; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -ms-flex-pack: center; justify-content: center; max-width: 650px; }
+
+#app .app .contactForm { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 10px; background-color: #33425B; }
+
+#app .app .contactForm button { background: inherit; border-style: none; color: #fff; border: 2px solid #16a085; transition: 0.7s ease-out; }
+
+#app .app .contactForm button:hover { cursor: pointer; border: 2px solid red; }
+
+#app .app .contactsList { margin-top: 10px; padding: 0; }
+
+#app .app .contactsList .contactItem { display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 5px; padding: 5px; background-color: #bfe9ef; border: 2px solid black; }
+
+#app .app .contactsList .contactItem .contactImage { width: 100px; height: 100px; padding: 5px; }
+
+#app .app .contactsList .contactItem .contactLabel { -ms-flex-item-align: center; -ms-grid-row-align: center; align-self: center; margin: 5px; }
+
+#app .app .contactsList .contactItem .contactEmail { -ms-flex-item-align: end; align-self: flex-end; text-decoration: none; }

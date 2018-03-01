@@ -1,0 +1,36 @@
+{
+  "name": "zadanie_14_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-project": "npm run init:dirs && npm run init:files",
+    "init:dirs": "mkdir components",
+    "init:files": "touch README.md index.html script.js styles.css components/App.js components/Contact.js components/ContactForm.js components/Contacts.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:sass:dev": "node-sass --output-style expanded --source-map true -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/styles.css",
+    "watch": "parallelshell  \"npm run watch:sassprefixer\" \"npm run watch:browser-sync\" ",
+    "watch:sassprefixer": "onchange sass/*.scss -- parallelshell \"npm run build:sass\" \"npm run build:autoprefixer\" ",
+    "watch:browser-sync": "browser-sync start --server --files css/*.css *.html",
+    "test": "npm run test:html && npm run test:js",
+    "test:js": "jshint --show-non-errors components",
+    "test:html": "globstar nu-html-checker *.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.23.6",
+    "globstar": "^1.0.0",
+    "jshint": "^2.9.5",
+    "node-sass": "^4.7.2",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
+  },
+  "dependencies": {
+    "babel-standalone": "^6.26.0"
+  }
+}

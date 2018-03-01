@@ -1,0 +1,56 @@
+@mixin flex-row-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#app {
+	display: flex;
+	justify-content: center;
+	.app {
+		display: inline-flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		max-width: 650px;
+		.contactForm {
+			@include flex-row-wrap;
+			padding: 10px;
+			background-color: #33425B;
+				button {
+					background: inherit;
+					border-style: none;
+					color: #fff;
+					border: 2px solid #16a085;
+					transition: 0.7s ease-out;
+					&:hover {
+						cursor: pointer;
+						border: 2px solid red;
+					}
+				}
+			}
+		.contactsList {
+			margin-top: 10px;
+			padding: 0;
+				.contactItem {
+					@include flex-row-wrap;
+					margin: 5px;
+					padding: 5px;
+					background-color: #bfe9ef;
+					border: 2px solid black;
+						.contactImage {
+							width: 100px;
+							height: 100px;
+							padding: 5px;
+						}
+						.contactLabel {
+							align-self: center;
+							margin: 5px;
+						}
+						.contactEmail {
+							align-self: flex-end;
+							text-decoration: none;
+						}
+				}
+		}
+	}
+}		
